@@ -49,7 +49,7 @@ To run application take the following steps:
 -Open terminal and run npm i
 -nom install mongoose
 -Run npm start
--Using this link check out this application on Heroku
+-Using this [link] (https://hidden-sierra-38983.herokuapp.com/) check out this application on Heroku
 
 
 ---
