@@ -26,7 +26,7 @@ THEN the deposits or expenses added while they were offline are added to their t
 ---
 
 ## Mock Up
-![MockUp](./images/MockUp.PNG)
+![MockUp](images\MockUp.png)
 
 ---
 
