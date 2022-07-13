@@ -25,11 +25,6 @@ THEN the deposits or expenses added while they were offline are added to their t
 ```
 ---
 
-## Mock Up
-![MockUp](./images/MockUp.PNG)
-
----
-
 ### Installation
 [REPO](https://github.com/lawalker4/thesocialapi/tree/develop)
 
