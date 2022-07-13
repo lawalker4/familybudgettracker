@@ -1,11 +1,11 @@
-const APP_PREFIX = 'familybugettracker';     
+const APP_PREFIX = 'familybugettracker';
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION
-const FILES_TO_CACHE = [
 
-  "./index.html",
+const FILES_TO_CACHE = [
   "/",
-  "/js/index.html",
+  "/index.html",
+  "/js/index.js",
   "/js/idb.js",
   "/manifest.json",
   "/css/style.css",
@@ -50,18 +50,19 @@ self.addEventListener('install', function (e) {
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keyList) {
-        let cacheKeeplist = keyList.filter(function (key) {
+      let cacheKeeplist = keyList.filter(function (key) {
         return key.indexOf(APP_PREFIX);
-      })
-      // add current cache name to keeplist
+      });
       cacheKeeplist.push(CACHE_NAME);
 
-      return Promise.all(keyList.map(function (key, i) {
-        if (cacheKeeplist.indexOf(key) === -1) {
-          console.log('deleting cache : ' + keyList[i] );
-          return caches.delete(keyList[i]);
-        }
-      }));
+      return Promise.all(
+        keyList.map(function (key, i) {
+          if (cacheKeeplist.indexOf(key) === -1) {
+            console.log('deleting cache : ' + keyList[i]);
+            return caches.delete(keyList[i]);
+          }
+        })
+      );
     })
   );
 });
